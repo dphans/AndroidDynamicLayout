@@ -1,14 +1,60 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'AndroidDynamicLayout'
+
+    publishedGroupId = 'com.dphans.lib.dynamic_layout'
+    libraryName = 'AndroidDynamicLayout'
+    artifact = 'AndroidDynamicLayout'
+
+    libraryDescription = 'Flexible android layouts with high customization.'
+
+    siteUrl = 'https://github.com/dphans/AndroidDynamicLayout'
+    gitUrl = 'https://github.com/dphans/AndroidDynamicLayout.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'dphans'
+    developerName = 'Bao Phan'
+    developerEmail = 'baophan94@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+ext.versions = [
+        'minSdk'    : 22,
+        'compileSdk': 28,
+        'targetSdk' : 28,
+        'buildTools': '28.0.3',
+        'release'   : libraryVersion,
+        'code'      : 1,
+]
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion versions.compileSdk
     defaultConfig {
-        minSdkVersion 22
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.release
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
@@ -30,3 +76,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/LissF/JCenter/master/script.gradle'

@@ -1,2 +1,2 @@
-include ':app', ':dynamic-layout'
+include ':sample', ':dynamic-layout'
 rootProject.name='AndroidDynamicLayout'
