@@ -1,0 +1,290 @@
+{
+  "version": 1, 
+  "view": {
+    "_uid": "74AE1E7F08B14F78A72F", 
+    "attributes": [
+      {
+        "key": "layout_width", 
+        "name": "android:layout_width", 
+        "namespace": "android", 
+        "type": "String", 
+        "value": "match_parent"
+      }, 
+      {
+        "key": "layout_height", 
+        "name": "android:layout_height", 
+        "namespace": "android", 
+        "type": "String", 
+        "value": "match_parent"
+      }, 
+      {
+        "key": "ignore", 
+        "name": "tools:ignore", 
+        "namespace": "tools", 
+        "type": "String", 
+        "value": "HardcodedText"
+      }
+    ], 
+    "childrens": [
+      {
+        "_uid": "22BE490B49CE4DC1ACE5", 
+        "attributes": [
+          {
+            "key": "clipChildren", 
+            "name": "android:clipChildren", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "false"
+          }, 
+          {
+            "key": "padding", 
+            "name": "android:padding", 
+            "namespace": "android", 
+            "type": "Dimension", 
+            "value": "20dp"
+          }, 
+          {
+            "key": "layout_height", 
+            "name": "android:layout_height", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "wrap_content"
+          }, 
+          {
+            "key": "layout_gravity", 
+            "name": "android:layout_gravity", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "center_vertical"
+          }, 
+          {
+            "key": "orientation", 
+            "name": "android:orientation", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "vertical"
+          }, 
+          {
+            "key": "clipToPadding", 
+            "name": "android:clipToPadding", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "false"
+          }, 
+          {
+            "key": "layout_width", 
+            "name": "android:layout_width", 
+            "namespace": "android", 
+            "type": "String", 
+            "value": "match_parent"
+          }
+        ], 
+        "childrens": [
+          {
+            "_uid": "2B006BAE755F4BF899D2", 
+            "attributes": [
+              {
+                "key": "layout_width", 
+                "name": "android:layout_width", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "match_parent"
+              }, 
+              {
+                "key": "layout_height", 
+                "name": "android:layout_height", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "text", 
+                "name": "android:text", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "Username"
+              }
+            ], 
+            "childrens": [], 
+            "view_class": "android.widget.TextView"
+          }, 
+          {
+            "_uid": "6443D1D8642E4F86B49F", 
+            "attributes": [
+              {
+                "key": "layout_width", 
+                "name": "android:layout_width", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "match_parent"
+              }, 
+              {
+                "key": "importantForAutofill", 
+                "name": "android:importantForAutofill", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "no"
+              }, 
+              {
+                "key": "layout_height", 
+                "name": "android:layout_height", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "ignore", 
+                "name": "tools:ignore", 
+                "namespace": "tools", 
+                "type": "String", 
+                "value": "LabelFor"
+              }, 
+              {
+                "key": "inputType", 
+                "name": "android:inputType", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "text|textPersonName"
+              }
+            ], 
+            "childrens": [], 
+            "view_class": "android.widget.EditText"
+          }, 
+          {
+            "_uid": "43F687195B394AB2A378", 
+            "attributes": [
+              {
+                "key": "layout_width", 
+                "name": "android:layout_width", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "match_parent"
+              }, 
+              {
+                "key": "layout_height", 
+                "name": "android:layout_height", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "text", 
+                "name": "android:text", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "Password"
+              }, 
+              {
+                "key": "layout_marginTop", 
+                "name": "android:layout_marginTop", 
+                "namespace": "android", 
+                "type": "Dimension", 
+                "value": "16dp"
+              }
+            ], 
+            "childrens": [], 
+            "view_class": "android.widget.TextView"
+          }, 
+          {
+            "_uid": "7598A3BDE4214D5EBF8D", 
+            "attributes": [
+              {
+                "key": "layout_width", 
+                "name": "android:layout_width", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "match_parent"
+              }, 
+              {
+                "key": "importantForAutofill", 
+                "name": "android:importantForAutofill", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "no"
+              }, 
+              {
+                "key": "layout_height", 
+                "name": "android:layout_height", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "ignore", 
+                "name": "tools:ignore", 
+                "namespace": "tools", 
+                "type": "String", 
+                "value": "LabelFor"
+              }, 
+              {
+                "key": "inputType", 
+                "name": "android:inputType", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "text|textPersonName"
+              }
+            ], 
+            "childrens": [], 
+            "view_class": "android.widget.EditText"
+          }, 
+          {
+            "_uid": "2F7A5C3380F84C2AA40E", 
+            "attributes": [
+              {
+                "key": "layout_width", 
+                "name": "android:layout_width", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "layout_height", 
+                "name": "android:layout_height", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "wrap_content"
+              }, 
+              {
+                "key": "text", 
+                "name": "android:text", 
+                "namespace": "android", 
+                "type": "Dimension", 
+                "value": "Login"
+              }, 
+              {
+                "key": "layout_marginTop", 
+                "name": "android:layout_marginTop", 
+                "namespace": "android", 
+                "type": "Dimension", 
+                "value": "32dp"
+              }, 
+              {
+                "key": "layout_gravity", 
+                "name": "android:layout_gravity", 
+                "namespace": "android", 
+                "type": "String", 
+                "value": "end"
+              }
+            ], 
+            "childrens": [], 
+            "view_class": "android.widget.Button"
+          }
+        ], 
+        "view_class": "android.widget.LinearLayout"
+      }
+    ], 
+    "view_class": "android.widget.ScrollView"
+  }, 
+  "view_classes": [
+    "android.widget.ScrollView", 
+    "android.widget.LinearLayout", 
+    "android.widget.TextView", 
+    "android.widget.EditText", 
+    "android.widget.Button"
+  ], 
+  "view_ids": [], 
+  "xmlns": {
+    "android": "http://schemas.android.com/apk/res/android", 
+    "tools": "http://schemas.android.com/tools"
+  }
+}

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dynamic Layout</string>
+    <string name="adl_document_uid_tag_key">adl_document_uid_tag_key</string>
+    <string name="adl_document_view_id_tag_key">adl_document_view_id_tag_key</string>
+</resources>
