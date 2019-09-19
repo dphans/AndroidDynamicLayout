@@ -2,6 +2,13 @@
 Flexible android layouts with high customization.
 
 
+## Purpose
+
+Basically, native Android applications are only allowed to render the UI through layouts in resource directory. So, if your application needs to change the UI more often, updating the application to users becomes more time-consuming.
+
+In other world, some applications need to update UI on the fly. Eg., your application can change the UI in a flexible way, users can choose the theme and download it from your server, update directly into the application?
+
+
 ## Features
 
 Below are the completed features, unchecked items that are developed in the future.
@@ -15,16 +22,45 @@ Below are the completed features, unchecked items that are developed in the futu
 - [ ] Add listeners when layout changes.
 
 
-## Gradle Dependency
+## Additional Tools
+
+ADL supports built-in tools (**ADL-Tools**), currently support converter to parse your layouts into JSON files. To use **ADL-Tools**, make sure your computer installed Python 2.x already.
+
+MacOS/Linux already installed Python 2.x so you can skip installation. For Windows users, you need to download Python 2.7 from [Python official site](https://www.python.org/downloads/release/python-278/).
+
+Download &amp; clone directory named ["adl-tools"](https://github.com/dphans/AndroidDynamicLayout/tree/master/adl-tools) from git, It's recommended to copy `adl-tools` into your project root.
+
+**To convert layout files into JSON, open Terminal, type:**
+
+```bash
+python ./adl-tools/adl.py convert -input <input_file> -output <output_file>.json
+```
+
+*For example, I've copied `adl-tools` into Android project root, then convert `main_activity.xml` into JSON file into `assets` directory:*
+
+```bash
+python ./adl-tools/adl.py convert -input ./app/src/main/res/layout/activity_main.xml -output ./app/src/main/assets/main_activity.json
+```
+
+(See [layout file](https://github.com/dphans/AndroidDynamicLayout/blob/master/sample/src/main/res/layout/activity_main.xml) and [converted result](https://github.com/dphans/AndroidDynamicLayout/blob/master/sample/src/main/assets/layouts/main_activity.json))
+
+
+## Installation
+
+#### Gradle Dependency
 
 The stable version of library will be available on Jitpack soon.
 
 
-## Basics
+## Getting Started
 
-The simplest way to update View into Activities or Fragments via `ADL.Builder`:
+#### Basic
 
-### Activity
+The simplest way to update `View` into **Activities** or **Fragments** via `ADL.Builder`. The `ADL.Builder::createView` method return `View` instance, so you can set as content view if needed.
+
+With Kotlin block, you can prepare configurations before creating `View` through middleware `ADL.Builder::build` method.
+
+**Activity**
 
 ```kotlin
 class ExampleActivity : AppCompatActivity() {
@@ -41,7 +77,7 @@ class ExampleActivity : AppCompatActivity() {
 }
 ```
 
-### Fragment
+**Fragment**
 
 ```kotlin
 class SampleFragment: Fragment() {
@@ -59,7 +95,7 @@ class SampleFragment: Fragment() {
 }
 ```
 
-### Or... just inside layouts
+**Inside others ViewGroup**
 
 ```kotlin
 val playerLayout: FrameLayout = this.findViewById(R.id.player_container)
@@ -72,25 +108,6 @@ val playerContents = ADL.Builder(this.requireContext())
 playerLayout.addView(playerContents)
 ```
 
-## Convert Android XML layouts into JSON format
-
-- `ADL-Tools` helps you can convert layout XML into other file formats can parsable with ADL library (currently JSON supported).
-- To use `ADL-Tools`, make sure your computer installed Python 2.x already.
-- Clone or download folder named `adl-tools` into your computer.
-
-**To convert layout into json, execute `adl.py` with Python 2.x:**
-
-```
-python ./adl.py convert --input <path to layout.xml file> --output <path to output json file>
-```
-	
-*Example, put `adl-tools` into project, then convert `activity_main.xml` into `assets`:*
-	
-```
-python ./adl-tools/adl.py convert --input ./app/src/main/res/layout/activity_main.xml --output ./app/src/main/assets/layouts/main_activity.json
-```
-
-
 ## Histories
 
 - 2019/09/16: First initial project.
@@ -98,7 +115,7 @@ python ./adl-tools/adl.py convert --input ./app/src/main/res/layout/activity_mai
 
 ## Contributing
 
-If you would like to contribute code you can do so through GitHub by forking the repository and sending a pull request.
+If you would like to contribute code you can do so through GitHub by forking the [repository](https://github.com/dphans/AndroidDynamicLayout) and sending a pull request.
 
 When submitting code, please make every effort to follow existing conventions and style in order to keep the code as readable as possible.
 
