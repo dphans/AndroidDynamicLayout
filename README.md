@@ -4,6 +4,8 @@ Flexible android layouts with high customization.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![JitPack](https://jitpack.io/v/dphans/AndroidDynamicLayout.svg)](https://jitpack.io/#dphans/AndroidDynamicLayout/0.0.1)
 
+For more information and documentation please see the [website](website).
+
 
 ## Purposes
 
