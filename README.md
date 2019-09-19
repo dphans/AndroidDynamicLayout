@@ -1,8 +1,11 @@
 # AndroidDynamicLayout (ADL)
 Flexible android layouts with high customization.
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![JitPack](https://jitpack.io/v/dphans/AndroidDynamicLayout.svg)](https://jitpack.io/#dphans/AndroidDynamicLayout/0.0.1)
 
-## Purpose
+
+## Purposes
 
 Basically, native Android applications are only allowed to render the UI through layouts in resource directory. So, if your application needs to change the UI more often, updating the application to users becomes more time-consuming.
 
@@ -49,7 +52,31 @@ python ./adl-tools/adl.py convert -input ./app/src/main/res/layout/activity_main
 
 #### Gradle Dependency
 
-The stable version of library will be available on Jitpack soon.
+**Step 1.** Add the JitPack repository to your build file (root level):
+
+```
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+**Step 2.** Add the dependency (replace `{latest_version}` with latest version of library, see the version from `releases` section):
+
+```
+dependencies {
+    implementation 'com.github.dphans:AndroidDynamicLayout:{latest_version}'
+}
+```
+
+*If you need to use latest build pending for stable version updates, use SNAPSHOT from master branch instead:*
+
+```
+dependencies {
+    implementation 'com.github.dphans:AndroidDynamicLayout:master-SNAPSHOT'
+}
+```
 
 
 ## Getting Started
