@@ -2,8 +2,8 @@ package com.dphans.sample.adl
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.dphans.lib.dynamic_layout.ADL
-import com.dphans.lib.dynamic_layout.parsers.setLayoutJson
+import com.dphans.lib.dynamiclayout.ADL
+import com.dphans.lib.dynamiclayout.parsers.setLayoutJson
 
 
 class MainActivity : AppCompatActivity() {
