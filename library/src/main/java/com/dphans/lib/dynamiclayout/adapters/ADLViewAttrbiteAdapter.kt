@@ -138,16 +138,6 @@ class ADLViewAttrbiteAdapter : ADLAttributeAdapter<View> {
         }
     }
 
-    override fun onUpdateAttributeFromAttribute(
-        context: Context,
-        view: View,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
-    }
-
     override fun onUpdateAttributeFromDimension(
         context: Context,
         view: View,
@@ -283,28 +273,6 @@ class ADLViewAttrbiteAdapter : ADLAttributeAdapter<View> {
         }
     }
 
-    override fun onUpdateAttributeFromInteger(
-        context: Context,
-        view: View,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueInteger: Int
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromFloat(
-        context: Context,
-        view: View,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueFloat: Float
-    ) {
-
-    }
-
     override fun onUpdateAttributeFromString(
         context: Context,
         view: View,
@@ -345,16 +313,6 @@ class ADLViewAttrbiteAdapter : ADLAttributeAdapter<View> {
                     )
             }
         }
-    }
-
-    override fun onUpdateAttributeFromNull(
-        context: Context,
-        view: View,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
     }
 
     override fun getViewAttributeKeys(): List<String> {

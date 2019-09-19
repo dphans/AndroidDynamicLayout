@@ -45,60 +45,6 @@ class ADLTextViewAttributeAdapter : ADLAttributeAdapter<TextView> {
         }
     }
 
-    override fun onUpdateAttributeFromAttribute(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromDimension(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        convertedPixelValue: Int
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromFlags(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        flags: List<String>
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromInteger(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueInteger: Int
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromFloat(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueFloat: Float
-    ) {
-
-    }
-
     override fun onUpdateAttributeFromString(
         context: Context,
         view: TextView,
@@ -114,13 +60,4 @@ class ADLTextViewAttributeAdapter : ADLAttributeAdapter<TextView> {
         }
     }
 
-    override fun onUpdateAttributeFromNull(
-        context: Context,
-        view: TextView,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
-    }
 }

@@ -26,71 +26,6 @@ class ADLLinearLayoutAttributeAdapter : ADLAttributeAdapter<LinearLayout> {
         )
     }
 
-    override fun onUpdateAttributeFromResource(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        resourceName: String,
-        parent: ADLWidget?
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromAttribute(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromDimension(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        convertedPixelValue: Int
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromFlags(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        flags: List<String>
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromInteger(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueInteger: Int
-    ) {
-
-    }
-
-    override fun onUpdateAttributeFromFloat(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?,
-        valueFloat: Float
-    ) {
-
-    }
-
     override fun onUpdateAttributeFromString(
         context: Context,
         view: LinearLayout,
@@ -107,15 +42,5 @@ class ADLLinearLayoutAttributeAdapter : ADLAttributeAdapter<LinearLayout> {
                     LinearLayout.HORIZONTAL
             }
         }
-    }
-
-    override fun onUpdateAttributeFromNull(
-        context: Context,
-        view: LinearLayout,
-        attribute: ADLAttribute,
-        key: String,
-        parent: ADLWidget?
-    ) {
-
     }
 }

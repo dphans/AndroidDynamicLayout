@@ -30,7 +30,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         resourceName: String,
         parent: ADLWidget?
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromAttribute(
         context: Context,
@@ -38,7 +38,7 @@ interface ADLAttributeAdapter<V : View> {
         attribute: ADLAttribute,
         key: String,
         parent: ADLWidget?
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromDimension(
         context: Context,
@@ -47,7 +47,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         parent: ADLWidget?,
         convertedPixelValue: Int
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromFlags(
         context: Context,
@@ -56,7 +56,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         parent: ADLWidget?,
         flags: List<String>
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromInteger(
         context: Context,
@@ -65,7 +65,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         parent: ADLWidget?,
         valueInteger: Int
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromFloat(
         context: Context,
@@ -74,7 +74,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         parent: ADLWidget?,
         valueFloat: Float
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromString(
         context: Context,
@@ -83,7 +83,7 @@ interface ADLAttributeAdapter<V : View> {
         key: String,
         parent: ADLWidget?,
         valueString: String
-    )
+    ) = Unit
 
     fun onUpdateAttributeFromNull(
         context: Context,
@@ -91,7 +91,7 @@ interface ADLAttributeAdapter<V : View> {
         attribute: ADLAttribute,
         key: String,
         parent: ADLWidget?
-    )
+    ) = Unit
 
     fun applyAttribute(
         context: Context,
