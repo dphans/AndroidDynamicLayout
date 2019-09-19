@@ -4,10 +4,12 @@ import android.annotation.SuppressLint
 import android.util.Log
 import com.dphans.lib.dynamiclayout.ADL
 import com.dphans.lib.dynamiclayout.behaviors.ADLDocumentParser
+import com.dphans.lib.dynamiclayout.models.ADLAttribute
 import com.dphans.lib.dynamiclayout.models.ADLDocument
+import com.dphans.lib.dynamiclayout.models.ADLWidget
 import com.dphans.lib.dynamiclayout.parsers.ADLJsonParser.Companion.MIME_TYPE
 import com.dphans.lib.dynamiclayout.utils.ADLDataImporter
-import com.google.gson.GsonBuilder
+import org.json.JSONObject
 import java.io.File
 import java.io.InputStream
 
@@ -34,10 +36,9 @@ class ADLJsonParser : ADLDocumentParser() {
         return try {
             val jsonString = inputStream
                 .reader(charset = Charsets.UTF_8)
-            val gsonBuilder = GsonBuilder()
-            val document = gsonBuilder.create().fromJson(
-                jsonString.readText(),
-                ADLDocument::class.java
+                .readText()
+            val document = this@ADLJsonParser.parseDocument(
+                json = jsonString
             )
 
             if (document.version != this@ADLJsonParser.getParserVersion()) {
@@ -57,6 +58,67 @@ class ADLJsonParser : ADLDocumentParser() {
             exception.printStackTrace()
             null
         }
+    }
+
+    private fun parseDocument(json: String): ADLDocument {
+        val document = ADLDocument()
+        try {
+            val jsonObject = JSONObject(json)
+            document.version = jsonObject.getInt("version")
+
+            document.view = this@ADLJsonParser
+                .parseWidget(jsonObject.getJSONObject("view"))
+
+            val viewClasses = jsonObject.getJSONArray("view_classes")
+            document.view_classes = (0 until viewClasses.length())
+                .mapNotNull { viewClasses.getString(it) }
+
+            val viewIds = jsonObject.getJSONArray("view_ids")
+            document.view_ids = (0 until viewIds.length())
+                .mapNotNull { viewIds.getString(it) }
+
+            val xmlNs = jsonObject.getJSONObject("xmlns")
+            document.xmlns = xmlNs.keys().asSequence().toList().mapNotNull {
+                if (xmlNs.getString(it).isNullOrBlank()) {
+                    return@mapNotNull null
+                }
+                return@mapNotNull Pair(it, xmlNs.getString(it))
+            }.toMap()
+        } catch (exception: Exception) {
+            Log.println(Log.ASSERT, "ADLJsonParser", exception.message)
+        } finally {
+            return document
+        }
+    }
+
+    private fun parseWidget(jsonObject: JSONObject): ADLWidget? {
+        val widget = ADLWidget()
+        widget._uid = jsonObject.getString("_uid")
+        widget.view_class = jsonObject.getString("view_class")
+
+        val attributes = jsonObject.getJSONArray("attributes")
+        widget.attributes = (0 until attributes.length()).mapNotNull {
+            this@ADLJsonParser.parseAttributes(
+                jsonObject = attributes.getJSONObject(it)
+            )
+        }
+
+        val childrens = jsonObject.getJSONArray("childrens")
+        widget.childrens = (0 until childrens.length()).mapNotNull {
+            this@ADLJsonParser.parseWidget(
+                jsonObject = childrens.getJSONObject(it)
+            )
+        }
+        return widget
+    }
+
+    private fun parseAttributes(jsonObject: JSONObject): ADLAttribute? {
+        val attribute = ADLAttribute()
+        attribute.name = jsonObject.getString("name")
+        attribute.namespace = jsonObject.getString("namespace")
+        attribute.key = jsonObject.getString("key")
+        attribute.value = jsonObject.getString("value")
+        return attribute
     }
 
 
