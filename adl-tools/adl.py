@@ -45,6 +45,8 @@ def parse_recursive(element, namespaces):
     if isinstance(element.attrib, dict):
         widget.attributes = [entities.Attribute(name=normalize_attr(attr_key), value=element.attrib.get(attr_key))
                              for attr_key in element.attrib.keys()]
+        if len([style_item for style_item in widget.attributes if style_item.key == 'style']):
+            print '\033[93mWarning: Style the widget with `style="..."` currently does not support (Widget using: %s)!\033[0m' % widget.view_class
     else:
         widget.attributes = []
 
@@ -132,7 +134,7 @@ if __name__ == '__main__':
         input_src = args.input
         paths = args.output
         if not paths:
-            dest_paths = []
+            paths = []
         src_xml_to_dest_paths(
             src_xml=input_src,
             dests=paths,

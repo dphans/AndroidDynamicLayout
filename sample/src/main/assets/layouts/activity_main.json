@@ -1,7 +1,7 @@
 {
   "version": 1, 
   "view": {
-    "_uid": "3098A61C1FC449E6B03B", 
+    "_uid": "E748A0489285483E9031", 
     "attributes": [
       {
         "key": "layout_width", 
@@ -27,7 +27,7 @@
     ], 
     "childrens": [
       {
-        "_uid": "7276C5A8118844CFA22E", 
+        "_uid": "90574D4038AC4B408BCD", 
         "attributes": [
           {
             "key": "clipChildren", 
@@ -81,7 +81,7 @@
         ], 
         "childrens": [
           {
-            "_uid": "0A72C544DE6A4449937D", 
+            "_uid": "2FE9D6D5D93F4E4C8369", 
             "attributes": [
               {
                 "key": "layout_width", 
@@ -109,7 +109,7 @@
             "view_class": "android.widget.TextView"
           }, 
           {
-            "_uid": "3C31E331C4DD4265965A", 
+            "_uid": "3D9F403582EF45F6AC1F", 
             "attributes": [
               {
                 "key": "layout_width", 
@@ -151,7 +151,7 @@
             "view_class": "android.widget.EditText"
           }, 
           {
-            "_uid": "1F4760F404DD416A801B", 
+            "_uid": "E4BE92CBB1BB45E5BC91", 
             "attributes": [
               {
                 "key": "layout_width", 
@@ -186,7 +186,7 @@
             "view_class": "android.widget.TextView"
           }, 
           {
-            "_uid": "D66BA915A6A94514816F", 
+            "_uid": "5A20BEB85C03402C9F28", 
             "attributes": [
               {
                 "key": "layout_width", 
@@ -228,7 +228,7 @@
             "view_class": "android.widget.EditText"
           }, 
           {
-            "_uid": "633D1D729456405CBFA3", 
+            "_uid": "EC49EB9B605B443BA54D", 
             "attributes": [
               {
                 "key": "layout_gravity", 

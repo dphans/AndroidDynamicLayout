@@ -40,6 +40,12 @@ class ADLAttributeUtil {
             }
         }
 
+        fun getAdapterForView(config: ADL.Builder, view: View): ADLAttributeAdapter<out View>? {
+            return config.mAdapters.firstOrNull { adapter ->
+                return@firstOrNull adapter.getViewClass().isInstance(view)
+            }
+        }
+
     }
 
 }

@@ -1,3 +1,4 @@
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -10,6 +11,20 @@ ext.versions = [
         'release'   : "0.0.1",
         'code'      : 1,
 ]
+
+publish {
+    def groupProjectID = 'com.dphans.lib.dynamiclayout'
+    def artifactProjectID = 'AndroidDynamicLayout'
+    def publishVersionID = versions.release
+
+    userOrg = 'dphans'
+    repoName = 'AndroidDynamicLayout'
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = 'Update native Android layout on the fly!'
+    website = 'http://dphans.github.io/pages/library/adl/'
+}
 
 android {
     compileSdkVersion versions.compileSdk

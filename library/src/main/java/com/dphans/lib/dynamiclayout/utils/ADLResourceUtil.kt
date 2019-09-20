@@ -60,6 +60,22 @@ object ADLResourceUtil {
         )
     }
 
+    fun getStyleIdByName(context: Context, name: String): Int? {
+        return getResourceId(
+            context = context,
+            name = name,
+            type = "font"
+        )
+    }
+
+    fun getAttrIdByName(context: Context, name: String): Int? {
+        return getResourceId(
+            context = context,
+            name = name,
+            type = "attr"
+        )
+    }
+
     fun getPixelFromDimenIdByName(context: Context, name: String): Int? {
         val resourceId = this@ADLResourceUtil.getDimenIdByName(
             context = context,
@@ -73,8 +89,12 @@ object ADLResourceUtil {
 
     private fun getResourceId(context: Context, name: String, type: String): Int? {
         return ADLUtils.passException {
-            return@passException context.resources
+            val resourceId = context.resources
                 .getIdentifier(name, type, context.applicationContext.packageName)
+            if (resourceId == 0) {
+                return@passException null
+            }
+            return@passException resourceId
         }
     }
 

@@ -41,14 +41,8 @@ private fun ADLDocument.createViewRecursively(
     val viewInstance = widget.createView(
         context = context
     )
-    ADLAttributeUtil.applyAttributeForView(
-        view = viewInstance,
-        context = context,
-        config = config,
-        widget = widget,
-        parent = parent
-    )
 
+    // parse child widgets
     if (viewInstance is ViewGroup) {
         widget.childrens.forEach { childWidget ->
             viewInstance.addView(
@@ -65,6 +59,15 @@ private fun ADLDocument.createViewRecursively(
     // map view id, tag for find views purpose
     viewInstance.setTag(R.string.adl_document_uid_tag_key, widget._uid)
     viewInstance.setTag(R.string.adl_document_view_id_tag_key, viewInstance.id)
+
+    // update widget styles
+    ADLAttributeUtil.applyAttributeForView(
+        view = viewInstance,
+        context = context,
+        config = config,
+        widget = widget,
+        parent = parent
+    )
 
     return viewInstance
 }
